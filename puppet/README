@@ -1,0 +1,18 @@
+# Install puppet for Mac OS X
+https://docs.puppet.com/puppet/latest/install_osx.html#download-the-os-x-puppet-agent-package
+
+# Configure puppet to look for manifests in the proper place
+$ cd fetchdb/fetchdb/packaging/etc_fetch/demo/puppet
+$ puppet config print | grep environmentpath
+environmentpath = /Users/tim/.puppetlabs/etc/code/environments
+$ puppet config set environmentpath ./environments
+$ puppet config print | grep environmentpath
+environmentpath = /Users/tim/gocode/src/github.com/styrainc/fetchdb/packaging/etc_fetch/demo/puppet/environments
+
+# Compile manifest for node foo.
+#  It doesn't matter what node-name you give--the default is to use the 'production' environment.
+$ puppet master --compile foo
+
+# Edit the puppet manifest
+$ vi ./environments/production/manifests/test.pp
+
