@@ -52,7 +52,7 @@ paths:
                 $ref: "#/components/schemas/Error"
       security:
       - any:
-        - developer
+        - cn=readers,ou=users,dc=example,dc=org
 components:
   schemas:
     Pet:
