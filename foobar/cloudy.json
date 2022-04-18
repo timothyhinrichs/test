@@ -1,0 +1,44 @@
+{
+  "provider": [
+    {
+      "aws": [
+        {
+          "profile": "tf-example",
+          "region": "us-east-1"
+        }
+      ]
+    }
+  ],
+  "resource": [
+    {
+      "aws_instance": [
+        {
+          "new_ec2": [
+            {
+              "ami": "ami-830c94e3",
+              "instance_type": "t2.micro",
+              "tags": [
+                {
+                  "Name": "ExampleInstance"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "terraform": [
+    {
+      "required_providers": [
+        {
+          "aws": [
+            {
+              "version": "~\u003e 3.27"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
